@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 public class SalaryService {
@@ -58,5 +59,10 @@ public class SalaryService {
         salary.setEmploymentInsurance(BigDecimal.ZERO); // 예시로 고정값 설정
 
         return salaryRepository.save(salary);
+    }
+
+    public Salary getSalaryById(Long salaryId) {
+        Optional<Salary> salary = salaryRepository.findById(salaryId);
+        return salary.orElseThrow(() -> new RuntimeException("Salary not found for id: " + salaryId));
     }
 }

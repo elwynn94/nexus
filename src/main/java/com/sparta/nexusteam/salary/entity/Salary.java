@@ -49,5 +49,4 @@ public class Salary {
 
     @Column(name = "employment_insurance", precision = 10, scale = 2)
     private BigDecimal employmentInsurance;
-
 }
