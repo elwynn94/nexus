@@ -2,6 +2,7 @@ package com.sparta.nexusteam.salary.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -9,6 +10,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "salary")
 @Getter
+@Setter
 public class Salary {
 
     @Id
